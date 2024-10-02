@@ -5,14 +5,24 @@ export const GameContext = createContext({});
 export const GameContextProvider = (props) => {
   const [game, setGame] = useState({
     board: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    player1: {
+        choice: "x",
+        name: "Mohau"
+    },
+    player2: {
+        choice: "o",
+        name: "Jay"
+    },
+    turn:"x"
   });
 
   const updateBoard = (index) => {
     let updatedBoard = game.board;
-    updatedBoard[index] = "x";
+    updatedBoard[index] = game.turn;
     setGame({
         ...game,
-        board: updatedBoard
+        board: updatedBoard,
+        turn: game.turn === "x" ? "o" : "x",
     })
   }
 
