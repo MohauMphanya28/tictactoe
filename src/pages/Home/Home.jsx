@@ -1,7 +1,6 @@
 import React from "react";
-import { Container } from "./Home.styled";
-import { Subitle, Title } from "../../styles/General.styled";
-import Header from "../../components/Header/Header";
+import { Container, Subitle, Title } from "../../styles/General.styled";
+// import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 
