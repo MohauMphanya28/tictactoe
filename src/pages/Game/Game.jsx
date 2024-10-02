@@ -1,22 +1,21 @@
-import React from 'react';
-import {Container} from "../../styles/General.styled"
-import { GameBoardStyle } from './Game.styled';
-import GameCell from '../../components/GameCell/GameCell';
+import React, { useContext } from "react";
+import { Container } from "../../styles/General.styled";
+import { GameBoardStyle } from "./Game.styled";
+import GameCell from "../../components/GameCell/GameCell";
+import { GameContext } from "../../contexts/GameContext";
 
 const Game = () => {
-const board = [1,2,3,4,5,6,7,8,9]
+  const { game } = useContext(GameContext);
 
   return (
     <Container>
       <GameBoardStyle>
-        {
-          board.map((item, index)=> (
-            <GameCell />
-          )) 
-        }
+        {game.board.map((item, index) => (
+          <GameCell key={index} cellitem={item} index={index}/>
+        ))}
       </GameBoardStyle>
     </Container>
-  )
-}
+  );
+};
 
-export default Game
+export default Game;
