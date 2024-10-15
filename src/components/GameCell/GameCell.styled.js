@@ -10,4 +10,11 @@ width: 10rem;
 height: 10rem;
 box-shadow: 5px 10px ${(props) => props.theme.colors.purple};
 cursor: pointer;
+padding: 2rem;
+
+.iconColor {
+    path {
+        fill:  ${(props) => props.theme.colors.primary};
+    }
+}
 `
