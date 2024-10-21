@@ -20,22 +20,20 @@ const GameCell = ({ cellItem, index }) => {
   if (cellItem === "x") {
     return (
       <CellStyle>
-        <IconX />
+        <IconX className="iconColor" />
       </CellStyle>
     );
   } else if (cellItem === "o") {
     return (
       <CellStyle>
-        <IconO />
+        <IconO className="iconColor" />
       </CellStyle>
     );
   }
 
   // Render an empty cell that is clickable
   return (
-    <CellStyle
-      onClick={cellClickHandler}
-    >
+    <CellStyle onClick={cellClickHandler}>
       {/* Show nothing in the cell if it’s still a number */}
       {""}
     </CellStyle>
