@@ -9,10 +9,14 @@ const GameCell = ({ cellItem, index }) => {
   const { updateBoard, game } = useContext(GameContext);
 
   const cellClickHandler = () => {
-    updateBoard(index);
-    checkForWinner(game.board);
+    // Ensure the cell is not already taken before updating the board
+    if (typeof game.board[index] === "number") {
+      updateBoard(index);
+      checkForWinner(game.board);
+    }
   };
 
+  // Render "x" or "o" based on the value in the board array
   if (cellItem === "x") {
     return (
       <CellStyle>
@@ -27,13 +31,13 @@ const GameCell = ({ cellItem, index }) => {
     );
   }
 
+  // Render an empty cell that is clickable
   return (
     <CellStyle
-      onClick={() => {
-        cellClickHandler();
-      }}
+      onClick={cellClickHandler}
     >
-      {game.turn === "x" ? (<IconX />) : (<IconO />)}
+      {/* Show nothing in the cell if it’s still a number */}
+      {""}
     </CellStyle>
   );
 };

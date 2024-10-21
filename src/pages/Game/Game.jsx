@@ -11,7 +11,7 @@ const Game = () => {
     <Container>
       <GameBoardStyle>
         {game.board.map((item, index) => (
-          <GameCell key={index} cellitem={item} index={index}/>
+          <GameCell key={index} cellItem={item} index={index}/>
         ))}
       </GameBoardStyle>
     </Container>
