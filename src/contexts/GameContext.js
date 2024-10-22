@@ -6,12 +6,12 @@ export const GameContextProvider = (props) => {
   const [game, setGame] = useState({
     board: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     player1: {
-      choice: "x",
+      choice: "X",
       name: "Mohau",
       score: 0,
     },
     player2: {
-      choice: "o",
+      choice: "O",
       name: "Jay",
       score: 0,
     },
