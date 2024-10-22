@@ -13,14 +13,32 @@ export const ModalBackdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background: white;
-    border-radiues: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: ${(props) => props.theme.colors.secondary};
+  min-width: 400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: ${(props) => props.theme.colors.secondary};
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ModalBody = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  flex-direction: column;
+`;
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: center;
 `;

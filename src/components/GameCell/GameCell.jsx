@@ -4,15 +4,20 @@ import { GameContext } from "../../contexts/GameContext";
 import { checkForWinner } from "../../utils/GameUtils";
 import { ReactComponent as IconX } from "../../assets/svg/xicon.svg";
 import { ReactComponent as IconO } from "../../assets/svg/oicon.svg";
+import RoundOverModal from "../Modal/RoundOverModal/RoundOverModal";
+import {ModalContext} from "../../contexts/ModalContext";
 
 const GameCell = ({ cellItem, index }) => {
   const { updateBoard, game } = useContext(GameContext);
+  const {handleModal} = useContext(ModalContext)
 
   const cellClickHandler = () => {
     // Ensure the cell is not already taken before updating the board
     if (typeof game.board[index] === "number") {
       updateBoard(index);
-      checkForWinner(game.board);
+      if (checkForWinner(game.board)) {
+        handleModal(<RoundOverModal />)
+      }
     }
   };
 
