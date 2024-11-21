@@ -3,7 +3,6 @@ const checkForSequence = (option1, option2, option3) => {
 };
 
 export const checkForWinner = (board) => {
-    console.log("in here");
     // Rows
     for (let i = 0; i < 9; i += 3) {
         if (checkForSequence(board[i], board[i+1], board[i+2])) {

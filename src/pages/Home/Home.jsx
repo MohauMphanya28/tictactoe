@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <Container>
+    <Container columnBased>
       <Title>Tic Tac Toe</Title>
       <Subitle>
         Play with your friends and find out who's the <br />

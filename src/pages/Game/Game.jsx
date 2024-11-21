@@ -5,6 +5,7 @@ import { TurnIndicator } from "./Game.styled";
 import GameCell from "../../components/GameCell/GameCell";
 import { GameContext } from "../../contexts/GameContext";
 import Player from "../../components/Player/Player";
+
 const Game = () => {
   const { game } = useContext(GameContext);
 
